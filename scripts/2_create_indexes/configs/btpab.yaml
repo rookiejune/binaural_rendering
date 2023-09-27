@@ -1,0 +1,31 @@
+---
+sample_rate: 48000
+segment_seconds: 2.0
+
+train:
+    source_types:
+        ambisonic:
+            btpab:
+                hdf5s_directory: "/mnt/local1_ssd/zhuyin/Workspace/binaural_rendering/hdf5s/btpab/train"
+                key_in_hdf5: "ambisonic"
+                hop_seconds: 0.1
+        binaural:
+            btpab:
+                hdf5s_directory: "/mnt/local1_ssd/zhuyin/Workspace/binaural_rendering/hdf5s/btpab/train"
+                key_in_hdf5: "binaural"
+                hop_seconds: 0.1
+    index_path: "/mnt/local1_ssd/zhuyin/Workspace/binaural_rendering/indexes/btpab/train.pkl"
+
+test:
+    source_types:
+        ambisonic:
+            btpab:
+                hdf5s_directory: "/mnt/local1_ssd/zhuyin/Workspace/binaural_rendering/hdf5s/btpab/val"
+                key_in_hdf5: "ambisonic"
+                hop_seconds: 0.1
+        binaural:
+            btpab:
+                hdf5s_directory: "/mnt/local1_ssd/zhuyin/Workspace/binaural_rendering/hdf5s/btpab/val"
+                key_in_hdf5: "binaural"
+                hop_seconds: 0.1
+    index_path: "/mnt/local1_ssd/zhuyin/Workspace/binaural_rendering/indexes/btpab/val.pkl"

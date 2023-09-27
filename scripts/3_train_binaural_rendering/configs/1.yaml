@@ -1,0 +1,49 @@
+---
+experiment:
+    name: binaural_rendering
+    version: default_setting
+
+model:
+    name: scgad
+    keywords:
+        num_transformer_layers: 2
+        num_gru_layers: 2
+        hidden_dim_ratio: 1.
+
+loss_fn:
+    name: scl
+    keywords:
+        n_fft: 2048
+        # window: hann
+        return_complex: true
+
+lightning_module:
+    name: binaural_rendering
+    keywords:
+
+trainer:
+    keywords:
+        max_steps: 200000
+        check_val_every_n_epoch: 1
+
+data_module:
+    name: btpab
+    keywords:
+        sampler_keywords:
+            indexes_path: /mnt/local1_ssd/zhuyin/Workspace/binaural_rendering/indexes/btpab/train.pkl
+            source_types:
+              - ambisonic
+              - binaural
+            remixing_sources: False
+            mixaudio_dict:
+              ambisonic: 1
+              biaural: 1
+            batch_size: 16
+            steps_per_epoch: 10000
+
+        dataset_keywords:
+            source_types:
+                - ambisonic
+                - binaural
+            segment_samples: 48000
+        num_workers: 8
