@@ -8,7 +8,7 @@ Therefore, we proposed a framework that is independent of HRTFs and has comparab
 
 This work is helpful for users who has personalized needs and cannot afford the cost of measuring HRTFs.
 
-More details can be found in our paper: [TODO].
+More details can be found in our paper: [End-to-End Paired Ambisonic-Binaural Audio Rendering](https://www.ieee-jas.net/en/article/id/7f409b94-2b8f-4143-99d2-e5ae6fdede8e).
 
 ## How to start
 
@@ -35,3 +35,5 @@ bash scripts/3_train_binaural_rendering/1.sh
 ```
 
 ## Contact with us
+
+Email to yinzhu20@fudan.edu.cn for details of the paper.
